@@ -16,7 +16,7 @@ All this initial work is under the **Voyager II folder**, keep in mind some vari
 Now today, 3 years later I revised this code for another course project with the objective of expanding it further using different computational techniques as well leveraging these years of experience.
 The first step has been re-organazing the original code in a tidier way, moving corresponding functions to each library and instantiating a class for the n-body system.
 
-The code here uses a bit less memory as well, though it remains computationally inefficient at best (using the littlest amount of memory simply means simply saving each iteration to file, so of course we are pretty much limited by ofstream routines).
+The code here uses a bit less memory as well, though it remains computationally inefficient at best (using the littlest amount of memory simply means saving each iteration to file, so of course we are pretty much limited by ofstream routines).
 You can see all this material in the **first-revision** branch of this repository.
 
 
