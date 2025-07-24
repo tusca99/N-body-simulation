@@ -1,7 +1,8 @@
 # N-Body Simulation Project
 
 This project is a high-performance, modular N-body simulation framework designed for modern computing physics research and experimentation. It supports large-scale astrophysical simulations with GPU acceleration, interactive visualization, flexible initialization, and robust output options.
-It's a codebase for future improvement and extensions. Work for the project of Modern Computing for Physics for MSc Physics of Data, UniPD.
+It's a codebase for future improvement and extensions. Work and presentation for the project of Modern Computing for Physics for MSc Physics of Data, UniPD.
+You no not need presentation folder to run the project. In fact there is a lot of extra material here.
 
 ---
 
