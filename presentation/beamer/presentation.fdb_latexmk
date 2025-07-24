@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1753374092.71656 "/home/alessio/ssd_data/Alessio/uni magistrale/Modern_Computing_Physics/project_n_body/cuda_sim_v3.2/presentation/beamer/presentation.tex" "presentation.pdf" "presentation" 1753374102.44085 0
-  "/home/alessio/ssd_data/Alessio/uni magistrale/Modern_Computing_Physics/project_n_body/cuda_sim_v3.2/presentation/beamer/presentation.tex" 1753374091.32404 10569 7cb30507c84113e7d0c986f2275823da ""
+["pdflatex"] 1753375535.44929 "/home/alessio/ssd_data/Alessio/uni magistrale/Modern_Computing_Physics/project_n_body/cuda_sim_v3.2/presentation/beamer/presentation.tex" "presentation.pdf" "presentation" 1753375545.7249 0
+  "/home/alessio/ssd_data/Alessio/uni magistrale/Modern_Computing_Physics/project_n_body/cuda_sim_v3.2/presentation/beamer/presentation.tex" 1753375534.63214 10782 fb0db3b695acb0597ea68e013f31d4e7 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -279,11 +279,11 @@
   "figures/gpu_stability_blocksize.png" 1753369286.59333 223510 b19dab6fa0c24834a9628bdd21bb803e ""
   "figures/mermaid_chart.png" 1753030626.96675 301162 bc4a78d780c73fb6fcbffd7455334b4e ""
   "figures/random.png" 1753365339.40771 7981 91c4288d3c93a3a31a1892696739ba07 ""
-  "presentation.aux" 1753374101.67192 4898 a45eb72ffb2ea9fa0e0b4e4d50983995 "pdflatex"
-  "presentation.nav" 1753374101.69992 3038 10e9d5935cca79dfd058deb1126e3e32 "pdflatex"
-  "presentation.out" 1753374101.69192 1044 25944699652c994a4e72c3b5e7148ecb "pdflatex"
-  "presentation.tex" 1753374091.32404 10569 7cb30507c84113e7d0c986f2275823da ""
-  "presentation.toc" 1753374101.70392 398 c1355aeea0cecfbcc66b0b1d15b1d785 "pdflatex"
+  "presentation.aux" 1753375545.12402 4898 a45eb72ffb2ea9fa0e0b4e4d50983995 "pdflatex"
+  "presentation.nav" 1753375545.14802 3038 10e9d5935cca79dfd058deb1126e3e32 "pdflatex"
+  "presentation.out" 1753375545.14002 1044 25944699652c994a4e72c3b5e7148ecb "pdflatex"
+  "presentation.tex" 1753375534.63214 10782 fb0db3b695acb0597ea68e013f31d4e7 ""
+  "presentation.toc" 1753375545.15602 398 c1355aeea0cecfbcc66b0b1d15b1d785 "pdflatex"
   "unipd_logo.png" 1753287308.76958 64429 c319a4e0cc135f6837b857f712d07b9e ""
   (generated)
   "presentation.aux"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.7.16)  24 JUL 2025 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.7.16)  24 JUL 2025 18:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1260,13 +1260,13 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 [17
 
 ]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 285--285
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 286--286
  [][][][]  
  []
 
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 285.
+Package pdftex.def Info: unipd_logo.png  used on input line 286.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1304,10 +1304,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,509b,999s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on presentation.pdf (19 pages, 2426745 bytes).
+Output written on presentation.pdf (19 pages, 2427150 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
+ 323 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
  45 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
