@@ -1,0 +1,69 @@
+{
+  "init": {
+    "selected": "RANDOM",
+    "FROM_FILE": {
+      "filePath": "data_in/sistema.dat",
+      "partialCount": 25
+    },
+    "RANDOM": {
+      "nParticles": 6,
+      "minMass": 1e-10,
+      "maxMass": 1e-5,
+      "L": 1e2,
+      "maxVelocity": 1.0,
+      "minDistance": 1e-3
+    },
+    "GALAXY": {
+      "nStars": 3000,
+      "blackHoleMass": 4e6,
+      "starMassMin": 0.1,
+      "starMassMax": 10.0,
+      "maxPosition": 330000,
+      "maxVelocity": 42.15,
+      "addPlanets": true,
+      "minPlanets": 0,
+      "maxPlanets": 3,
+      "planetMassMin": 1.7e-7,
+      "planetMassMax": 9.6e-4,
+      "planetDistanceMax": 6.68,
+      "planetVelocityMax": 6.32
+    },
+    "STELLAR_SYSTEM": {
+      "nPlanets": 500,
+      "starMass": 1.0,
+      "planetMassMin": 1.7e-8,
+      "planetMassMax": 9.6e-4,
+      "minPlanetDistance": 0.73,
+      "maxPlanetDistance": 16.68,
+      "addMoons": false,
+      "minMoons": 0,
+      "maxMoons": 3,
+      "moonMassMin": 5e-10,
+      "moonMassMax": 5e-8,
+      "moonDistanceMax": 0.00067,
+      "moonVelocityMax": 0.211
+    },
+    "SPIRAL_GALAXY": {
+      "nStars": 15000,
+      "totalMass": 1e4,
+      "nArms": 2,
+      "galaxyRadius": 3.09398e3,
+      "thickness": 6.18795e2,
+      "perturbation": 5.0
+    }
+  },
+  "threads": 2,
+  "years": 100.0,
+  "dtYears": 4e-2,
+  "output": { 
+    "dir": "data_out/", 
+    "file": "simulation_data_file_spiral_gpu.csv"
+  },
+  "integrationMethod": "VELOCITY_VERLET",
+  "forceMethod": "PAIRWISE",
+  "executionMode": "CPU",
+  "outputMode": "VISUALIZATION"
+}
+# in case of FILE_CSV output choice the output is written to the "output" path
+# to run with offloading for direct gpu rendering: __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ./n-body-simulation
+ 
