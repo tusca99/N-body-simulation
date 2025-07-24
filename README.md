@@ -158,42 +158,4 @@ For detailed architecture and code organization, see the README files in each su
 
 ## License
 
-[Specify your license here]
-
-
-
-
-
-Sto lavorando su un simulatore N-body ad alte prestazioni (CPU/GPU, CUDA/OpenMP) e ti allego:
-
-Il README generale del progetto
-I README dei moduli core e CUDA
-Il notebook Python che uso per analizzare i benchmark (benchmark_analysis.ipynb)
-Il file sorgente principale C++ (main.cpp)
-Vorrei migliorare l’analisi dei risultati di benchmark. Ecco cosa mi serve:
-
-Calcolo e visualizzazione di media e deviazione standard
-
-Per ogni combinazione di parametri (numero particelle, metodo forza, integrazione, modalità esecuzione, thread), voglio calcolare la media e la deviazione standard delle performance (StepsPerSecond e/o ParticleStepsPerSecond) su più run.
-Nei grafici, vorrei visualizzare la media come linea/punto e la deviazione standard come "error bar".
-Mi serve il codice Python (pandas/matplotlib/seaborn) per fare questo, integrabile nel mio notebook.
-Suggerimenti su metriche e indicatori
-
-Attualmente uso StepsPerSecond come metrica principale. Vorrei sapere se ci sono altre metriche più significative o complementari (es. throughput, speedup, efficienza parallela, tempo totale, stabilità).
-Vorrei una breve spiegazione di ciascuna metrica e come calcolarla con i dati che ho.
-Idee per nuovi grafici
-
-Vorrei suggerimenti su grafici utili e informativi che potrei aggiungere, anche combinazioni non banali tra parametri (es. heatmap, boxplot, scatter, confronto tra metodi, efficienza vs N, ecc).
-Per ogni grafico, una breve descrizione di cosa mostra e perché è utile.
-Indicazioni pratiche
-
-Per ogni suggerimento, vorrei sapere cosa devo fare concretamente (quali dati servono, come raggrupparli, che codice usare).
-Se possibile, esempi di codice Python da integrare nel mio notebook.
-Nota:
-I dati dei benchmark sono in formato CSV, con colonne come:
-NumParticles, Years, DtYears, ExecutionMode, ForceMethod, IntegrationMethod, NumThreads, StepsPerSecond, ParticleStepsPerSecond, Success, ErrorMessage, ...
-
-Obiettivo:
-Rendere la mia analisi dei benchmark più robusta, informativa e visivamente efficace, sfruttando al meglio i dati raccolti e le potenzialità di pandas/matplotlib/seaborn.
-
-Puoi rispondere punto per punto, con spiegazioni e codice pronto all’uso?
+GPLv3
