@@ -1,0 +1,141 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "Inter, Segoe UI, Arial",
+    "fontSize": "16px",
+    "background":"#fff"
+  },
+  "flowchart": {
+    "defaultRenderer": "elk",
+    "curve": "linear"
+  }
+}}%%
+flowchart TD
+
+  %% --- Macro Areas --- %%
+  subgraph CORE [Core]
+    direction TB
+    main["main.cpp"]
+    config["ConfigParser.hpp"]
+    system["System.hpp / System.cpp"]
+    initializer["Initializer.hpp / Initializer.cpp"]
+    particles["Particles.hpp"]
+    forces["Forces.hpp / Forces.cpp"]
+    execModes["ExecutionModes.hpp"]
+    outputUtils["OutputUtils.hpp / .cpp"]
+    outputData["OutputData.hpp"]
+    outputModes["OutputModes.hpp"]
+  end
+
+  subgraph CUDA [CUDA]
+    direction TB
+    simKernels["SimulationKernels.cu/.h"]
+    forceKernels["ForceKernels.cu/.cuh"]
+    integrationKernels["IntegrationKernels.cu/.cuh"]
+    bhKernels["BHKernels2.cu/.cuh"]
+    cudaUtils["CudaUtils.cu/.cuh"]
+    constants["Constants.cu/.cuh"]
+    benchKernels["BenchmarkKernels.cu/.h"]
+  end
+
+  subgraph OUTPUT [Output]
+    direction TB
+    outputStack["Output (output/)"]
+    CSV["File CSV"]
+  end
+
+  subgraph VIS ["Visualization"]
+    direction TB
+    visKernels["VisualizationKernels.cu/.h"]
+    visUtils["VisualizationUtils.h/.cpp"]
+    particleRenderer["ParticleRenderer.h/.cpp"]
+    shaderManager["ShaderManager.h/.cpp"]
+    cameraController["CameraController.h/.cpp"]
+  end
+
+  %% --- Connections --- %%
+
+  %% Core includes
+  main --> config
+  main --> system
+  main --> initializer
+  config --> initializer
+  config --> execModes
+  config --> system
+  config --> outputModes
+  system --> outputUtils
+  system --> execModes
+  system --> outputData
+  system --> particles
+  system --> forces
+  system --> outputModes
+  initializer --> particles
+  forces --> particles
+
+  %% Output stack
+  system --> outputData
+  system --> outputUtils
+  system --> outputModes
+  simKernels --> outputData
+  benchKernels --> outputUtils
+  outputUtils --> outputData
+  outputStack --> outputData
+  outputStack --> outputUtils
+  outputStack --> outputModes
+  outputUtils -->|writes| CSV
+
+  %% CUDA includes
+  system --> simKernels
+  system --> benchKernels
+  simKernels --> particles
+  simKernels --> system
+  simKernels --> forceKernels
+  simKernels --> integrationKernels
+  simKernels --> constants
+  simKernels --> cudaUtils
+  forceKernels --> system
+  forceKernels --> constants
+  forceKernels --> cudaUtils
+  forceKernels --> bhKernels
+  integrationKernels --> system
+  integrationKernels --> forceKernels
+  integrationKernels --> constants
+  integrationKernels --> cudaUtils
+  bhKernels --> constants
+  bhKernels --> cudaUtils
+  benchKernels --> particles
+  benchKernels --> system
+  benchKernels --> forceKernels
+  benchKernels --> integrationKernels
+  benchKernels --> cudaUtils
+  benchKernels --> outputUtils
+  constants --> cudaUtils
+
+  %% Visualization includes
+  system --> visKernels
+  visKernels --> particles
+  visKernels --> system
+  visKernels --> outputUtils
+  visKernels --> outputData
+  visKernels --> simKernels
+  visKernels --> forceKernels
+  visKernels --> integrationKernels
+  visKernels --> cudaUtils
+  visKernels --> constants
+  visKernels --> visUtils
+  visUtils --> particleRenderer
+  visUtils --> cameraController
+  particleRenderer --> shaderManager
+  particleRenderer --> cameraController
+  visKernels -->|interop| particleRenderer
+
+  %% --- Styling for Areas --- %%
+  classDef core fill:#e2eafc,stroke:#3B68A6,stroke-width:2px;
+  classDef cuda fill:#d6fde3,stroke:#36b371,stroke-width:2px;
+  classDef output fill:#edd9f7,stroke:#A055B6,stroke-width:2px;
+  classDef vis fill:#fff1e5,stroke:#E67E22,stroke-width:2px;
+
+  class CORE core;
+  class CUDA cuda;
+  class OUTPUT output;
+  class VIS vis;
