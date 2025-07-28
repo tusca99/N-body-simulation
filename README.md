@@ -68,7 +68,7 @@ You no not need presentation folder to run the project. In fact there is a lot o
      ```bash
      ./build.sh
      ```
-   - Clean build:
+   - Clean previous build folder:
      ```bash
      ./build.sh clean
      ```
