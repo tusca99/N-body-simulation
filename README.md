@@ -141,6 +141,8 @@ You no not need presentation folder to run the project. In fact there is a lot o
 
 ---
 
+Finally, for some more details and results you can directly check the 'benchmark-extra' branch where you can find all the results produced within this project.
+
 ## Example Configuration
 
 See `config.json` for a template and parameter descriptions.
