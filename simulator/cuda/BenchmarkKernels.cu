@@ -15,7 +15,7 @@
 extern "C" void runBenchmarkOnGPU(Particles& particles, 
                                 IntegrationMethod method,
                                 ForceMethod forceMethod,
-                                double dt, int steps) {
+                                double dt, int steps, int BLOCK_SIZE = 256) {
 #ifdef BENCHMARK_MODE
     int n = particles.n;
     //std::cout << "Starting GPU benchmark with " << n << " particles for " << steps << " steps..." << std::endl;
@@ -26,7 +26,6 @@ extern "C" void runBenchmarkOnGPU(Particles& particles,
     //bool useOccupancyAPI = true;  // Use occupancy API for block size determination
     // Create CUDA stream
     gpuErrchk(cudaStreamCreate(&computeStream));
-    
     // Allocate memory on the device
     gpuErrchk(cudaMalloc(&d_posMass, n * sizeof(double4)));
     gpuErrchk(cudaMalloc(&d_vel, n * sizeof(double4)));
@@ -45,7 +44,12 @@ extern "C" void runBenchmarkOnGPU(Particles& particles,
 
     //int blockSize = determineOptimalBlockSize(n, sizeof(double4) * 32);
     // If you ever want to try Occupancy API again, you can call it with the useOccupancyAPI flag:
-    int blockSize = determineOptimalBlockSize(n, sizeof(double4) * 32, (KernelFunction)getForceKernelPointer(forceMethod), false);
+    if (BLOCK_SIZE <= 0) {
+        //std::cerr << "Invalid BLOCK_SIZE specified. Using auto block size function" << std::endl;
+        BLOCK_SIZE = determineOptimalBlockSize(n, sizeof(double4) * 32, (KernelFunction)getForceKernelPointer(forceMethod), false);
+    }
+    // Use the provided BLOCK_SIZE or determine it dynamically
+    int blockSize = BLOCK_SIZE;
     dim3 blocks = calculateGrid(n, blockSize);
     size_t sharedMemSize = blockSize * sizeof(double4);
 

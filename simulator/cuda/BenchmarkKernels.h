@@ -12,7 +12,7 @@ extern "C" {
 void runBenchmarkOnGPU(Particles& particles, 
                       IntegrationMethod method,
                       ForceMethod forceMethod,
-                      double dt, int steps);
+                      double dt, int steps, int BLOCK_SIZE);
 
 #ifdef __cplusplus
 }

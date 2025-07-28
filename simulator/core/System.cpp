@@ -26,7 +26,7 @@
 extern "C" void runBenchmarkOnGPU(Particles& particles, 
                                  IntegrationMethod method,
                                  ForceMethod forceMethod,
-                                 double dt, int steps);
+                                 double dt, int steps, int BLOCK_SIZE);
 #endif
 
 #ifdef VISUALIZATION_ENABLED
@@ -165,13 +165,13 @@ void System::runGPUSimulation(double dt, int steps, double stepFreq, OutputData&
 }
 
 // Benchmark method - no output, no energy calculation, just pure performance
-void System::runBenchmark(double dt, int steps) {
+void System::runBenchmark(double dt, int steps, int BLOCK_SIZE) {
     //std::cout << "Running benchmark with " << steps << " steps..." << std::endl;
     
     auto start = std::chrono::high_resolution_clock::now();
     
     if (executionMode == ExecutionMode::GPU) {
-        runGPUBenchmark(dt, steps);
+        runGPUBenchmark(dt, steps, BLOCK_SIZE);
     } else {
         // CPU benchmark implementation - no output, no energy calculation
         for (int i = 0; i < steps; ++i) {
@@ -194,7 +194,7 @@ void System::runBenchmark(double dt, int steps) {
 }
 
 // GPU benchmark implementation - with fallback to standard simulation
-void System::runGPUBenchmark(double dt, int steps) {
+void System::runGPUBenchmark(double dt, int steps, int BLOCK_SIZE) {
     // Create a minimal OutputData instance for fallback
     OutputData dummyOutput(particles.n, 1, ExecutionMode::GPU);
     
@@ -202,7 +202,7 @@ void System::runGPUBenchmark(double dt, int steps) {
     std::cout << "Benchmark mode is not enabled in this build. Using standard simulation." << std::endl;
     runGPUSimulation(dt, steps, 1, dummyOutput);
     #else                             
-    runBenchmarkOnGPU(particles, method, forceMethod, dt, steps);
+    runBenchmarkOnGPU(particles, method, forceMethod, dt, steps, BLOCK_SIZE);
     #endif
 }
 

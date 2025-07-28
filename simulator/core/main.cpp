@@ -19,6 +19,7 @@ struct BenchmarkParams {
     int numThreads;
     IntegrationMethod integrationMethod;
     std::string initType;
+    int blockSize = 256; 
 };
 
 // Struttura per i risultati del benchmark con statistiche
@@ -119,8 +120,8 @@ BenchmarkResult runSingleBenchmark(const BenchmarkParams& params) {
         // Esegui la simulazione e misura il tempo
         auto start = std::chrono::high_resolution_clock::now();
         
-        // Per il benchmark, non salvare output (file vuoto)
-        sys.runSimulation(params.dtYears, totalSteps, totalSteps + 1, "", "");
+        // Usa runBenchmark invece di runSimulation per includere blockSize
+        sys.runBenchmark(params.dtYears, totalSteps, params.blockSize);
         
         auto end = std::chrono::high_resolution_clock::now();
         
@@ -194,7 +195,7 @@ BenchmarkResult runMultipleBenchmarks(const BenchmarkParams& params, int numRuns
             
             // Misura il tempo per questo run
             auto start = std::chrono::high_resolution_clock::now();
-            sys.runSimulation(params.dtYears, totalSteps, totalSteps + 1, "", "");
+            sys.runBenchmark(params.dtYears, totalSteps, params.blockSize);
             auto end = std::chrono::high_resolution_clock::now();
             
             // Raccogli le metriche
@@ -237,15 +238,15 @@ BenchmarkResult runMultipleBenchmarks(const BenchmarkParams& params, int numRuns
 void saveBenchmarkResults(const std::vector<BenchmarkResult>& results, const std::string& filename) {
     std::ofstream file(filename);
     
-    // Header CSV con statistiche
-    file << "NumParticles,Years,DtYears,ExecutionMode,ForceMethod,IntegrationMethod,NumThreads,InitType,";
+    // Header CSV con blockSize incluso
+    file << "NumParticles,Years,DtYears,ExecutionMode,ForceMethod,IntegrationMethod,NumThreads,BlockSize,InitType,";
     file << "NumRuns,TotalSteps,";
     file << "MeanExecutionTime,StdExecutionTime,";
     file << "MeanStepsPerSecond,StdStepsPerSecond,CVStepsPerSecond,MinStepsPerSecond,MaxStepsPerSecond,";
     file << "MeanParticleStepsPerSecond,StdParticleStepsPerSecond,";
     file << "Success,ErrorMessage\n";
     
-    // Dati
+    // Dati con blockSize incluso
     for (const auto& result : results) {
         const auto& p = result.params;
         
@@ -266,6 +267,7 @@ void saveBenchmarkResults(const std::vector<BenchmarkResult>& results, const std
              << forceMethod << ","
              << integMethod << ","
              << p.numThreads << ","
+             << p.blockSize << ","  // AGGIUNTO BLOCK SIZE
              << p.initType << ","
              << result.numRuns << ","
              << result.totalSteps << ","
@@ -287,60 +289,80 @@ void saveBenchmarkResults(const std::vector<BenchmarkResult>& results, const std
 
 // Funzione per eseguire il benchmark automatico
 void runAutomaticBenchmark() {
-    std::cout << "=== BENCHMARK AUTOMATICO N-BODY CON STATISTICHE ===" << std::endl;
+    std::cout << "=== BENCHMARK AUTOMATICO N-BODY CON BLOCK SIZE ANALYSIS ===" << std::endl;
     
-    // Parametri ridotti per velocità in presentazione
-    std::vector<int> particleCounts = {2, 5, 8, 10, 25, 50, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 100000};  // Ridotto per velocità
-    std::vector<int> threadCounts = {2};  // Ridotto
-    std::vector<ExecutionMode> executionModes = {ExecutionMode::CPU};
+    // PARAMETRI OTTIMIZZATI - Range più ampio e intelligente
+    std::vector<int> particleCounts = {64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072}; // Rimossi i piccolissimi
+    std::vector<int> threadCounts = {1,4};  // Per CPU
+    std::vector<ExecutionMode> executionModes = {ExecutionMode::CPU};  // Focus su GPU per block size
     std::vector<ForceMethod> forceMethods = {ForceMethod::BARNES_HUT};
     std::vector<IntegrationMethod> integrationMethods = {IntegrationMethod::VELOCITY_VERLET};
     
-    double years = 0.02;     // 2 steps
+    // BLOCK SIZES SOLO POTENZE DI 2 - più realistici per CUDA
+    std::vector<int> blockSizes = {-1}; // <0 for auto block size
+
+    // STEP COUNT ADATTIVO basato su N
+    auto getOptimalSteps = [](int numParticles) -> double {
+        if (numParticles < 1000) return 1.50;      // 150 step per piccoli N (velocissimi)
+        if (numParticles < 10000) return 0.25;     // 25 step per medi N  
+        return 0.10;                               // 10 step per grandi N (lenti)
+    };
+    
     double dtYears = 0.01;
     std::string initType = "random";
-    int numRuns = 10;  // 5 run per configurazione per statistiche decenti
-    std::cout << "Numero di run per configurazione: " << numRuns << std::endl;
-    std::cout << "Parametri di benchmark: " << std::endl;
-    std::cout << " - Anni: " << years << std::endl;
-    std::cout << " - Passo (anni): " << dtYears << std::endl;
-    // Parametri fissi della simulazione - uso valori più realistici per test rapidi
-    // double years = 0.1;      // Solo 0.1 anni per test rapidi
-    // double dtYears = 0.01;   // Step time più grande per meno iterazioni
-    // std::string initType = "random";
+    int numRuns = 5;  // Mantieni 5 run per statistiche robuste
     
-    // Genera tutte le combinazioni
+    std::cout << "Configurazioni adattive:" << std::endl;
+    std::cout << " - N < 1000: 20 steps per run" << std::endl;
+    std::cout << " - N < 10k: 10 steps per run" << std::endl;  
+    std::cout << " - N >= 10k: 5 steps per run" << std::endl;
+    std::cout << "Block sizes da testare: ";
+    for (int bs : blockSizes) {
+        std::cout << bs << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Numero di run per configurazione: " << numRuns << std::endl;
+    
+    // Genera tutte le combinazioni con STEP COUNT ADATTIVO
     std::vector<BenchmarkParams> paramSets;
     for (int particles : particleCounts) {
+        double years = getOptimalSteps(particles);  // STEP COUNT ADATTIVO
+        
         for (ExecutionMode execMode : executionModes) {
             for (ForceMethod forceMethod : forceMethods) {
                 for (IntegrationMethod integMethod : integrationMethods) {
                     if (execMode == ExecutionMode::CPU) {
-                        // Per CPU, testa diversi numeri di thread
+                        // Per CPU, block size non è rilevante ma lo includiamo per completezza
                         for (int threads : threadCounts) {
+                            for (int blockSize : blockSizes) {
+                                BenchmarkParams params;
+                                params.numParticles = particles;
+                                params.years = years;  // ADATTIVO
+                                params.dtYears = dtYears;
+                                params.executionMode = execMode;
+                                params.forceMethod = forceMethod;
+                                params.numThreads = threads;
+                                params.integrationMethod = integMethod;
+                                params.initType = initType;
+                                params.blockSize = blockSize;
+                                paramSets.push_back(params);
+                            }
+                        }
+                    } else {
+                        // Per GPU, testa diversi block sizes
+                        for (int blockSize : blockSizes) {
                             BenchmarkParams params;
                             params.numParticles = particles;
-                            params.years = years;
+                            params.years = years;  // ADATTIVO
                             params.dtYears = dtYears;
                             params.executionMode = execMode;
                             params.forceMethod = forceMethod;
-                            params.numThreads = threads;
+                            params.numThreads = 2;
                             params.integrationMethod = integMethod;
                             params.initType = initType;
+                            params.blockSize = blockSize;
                             paramSets.push_back(params);
                         }
-                    } else {
-                        // Per GPU, usa solo 1 thread (GPU non usa OpenMP)
-                        BenchmarkParams params;
-                        params.numParticles = particles;
-                        params.years = years;
-                        params.dtYears = dtYears;
-                        params.executionMode = execMode;
-                        params.forceMethod = forceMethod;
-                        params.numThreads = 1;
-                        params.integrationMethod = integMethod;
-                        params.initType = initType;
-                        paramSets.push_back(params);
                     }
                 }
             }
@@ -349,19 +371,28 @@ void runAutomaticBenchmark() {
     
     std::cout << "Numero totale di test: " << paramSets.size() << std::endl;
     
+    // Stima tempo totale
+    int totalSteps = 0;
+    for (const auto& params : paramSets) {
+        totalSteps += static_cast<int>(params.years / params.dtYears) * numRuns;
+    }
+    std::cout << "Step totali stimati: " << totalSteps << std::endl;
+    
     // Esegui i benchmark
     std::vector<BenchmarkResult> results;
     auto overallStart = std::chrono::high_resolution_clock::now();
     
     for (size_t i = 0; i < paramSets.size(); ++i) {
         const auto& params = paramSets[i];
+        int steps = static_cast<int>(params.years / params.dtYears);
         
         double progress = static_cast<double>(i) / paramSets.size() * 100.0;
         std::cout << "\r[" << std::fixed << std::setprecision(1) << progress << "%] "
                   << "Test " << (i + 1) << "/" << paramSets.size() 
                   << " - N=" << params.numParticles 
                   << " " << (params.executionMode == ExecutionMode::CPU ? "CPU" : "GPU")
-                  << " T=" << params.numThreads << " (" << numRuns << " runs)    " << std::flush;
+                  << " BS=" << params.blockSize 
+                  << " (" << steps << " steps × " << numRuns << " runs)    " << std::flush;
         
         // Esegui multiple runs con statistiche
         auto testStart = std::chrono::high_resolution_clock::now();
@@ -397,8 +428,8 @@ void runAutomaticBenchmark() {
         std::cout << "Test falliti: " << failures << std::endl;
     }
     
-    // Salva i risultati
-    std::string outputFile = "presentation/benchmarks/benchmark_results_" + 
+    // Salva i risultati con nome file che include info su block size
+    std::string outputFile = "presentation/benchmarks/benchmark_results_GPU_blocksize_" + 
                             std::to_string(std::chrono::duration_cast<std::chrono::seconds>(
                                 std::chrono::system_clock::now().time_since_epoch()).count()) + ".csv";
     
@@ -412,7 +443,7 @@ void runAutomaticBenchmark() {
         if (r.success) {
             std::cout << "N=" << r.params.numParticles 
                       << " " << (r.params.executionMode == ExecutionMode::CPU ? "CPU" : "GPU")
-                      << " T=" << r.params.numThreads
+                      << " BS=" << r.params.blockSize
                       << ": " << std::scientific << std::setprecision(2) << r.meanParticleStepsPerSecond 
                       << " ± " << r.stdParticleStepsPerSecond
                       << " particle-steps/s (CV=" << std::fixed << std::setprecision(1) << r.cvStepsPerSecond * 100 << "%)" << std::endl;

@@ -95,7 +95,7 @@ public:
                        const std::string &metadata);
     
     // Benchmark method that runs simulation without any output (no energy calculation)
-    void runBenchmark(double dt, int steps);
+    void runBenchmark(double dt, int steps, int BLOCK_SIZE = 256);
     
     // Visualization method that runs simulation with real-time rendering
     void runVisualization(double dt, int steps, double stepFreq);
@@ -117,7 +117,7 @@ private:
     void runGPUSimulation(double dt, int steps, double stepFreq, OutputData& outputData);
     
     // No output GPU simulation for benchmarking
-    void runGPUBenchmark(double dt, int steps);
+    void runGPUBenchmark(double dt, int steps, int BLOCK_SIZE = 256);
     
     // GPU visualization implementation
     void runGPUVisualization(double dt, int steps, double stepFreq);
