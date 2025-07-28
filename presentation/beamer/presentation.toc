@@ -3,5 +3,5 @@
 \beamer@sectionintoc {2}{Project Evolution}{4}{0}{2}
 \beamer@sectionintoc {3}{Memory Management and Optimizations}{7}{0}{3}
 \beamer@sectionintoc {4}{Force and Integration Methods}{8}{0}{4}
-\beamer@sectionintoc {5}{Limitations and Lessons Learned}{17}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{18}{0}{6}
+\beamer@sectionintoc {5}{Limitations and Lessons Learned}{18}{0}{5}
+\beamer@sectionintoc {6}{Conclusions}{19}{0}{6}

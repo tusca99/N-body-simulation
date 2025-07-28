@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.7.16)  24 JUL 2025 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.7.16)  28 JUL 2025 13:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1067,24 +1067,28 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 [8
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 183--183
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 163--163
  [][][][]  
  []
 
-<figures/gpu_perf_blocksize.png, id=128, 1438.173pt x 1136.0844pt>
-File: figures/gpu_perf_blocksize.png Graphic file (type png)
-<use figures/gpu_perf_blocksize.png>
-Package pdftex.def Info: figures/gpu_perf_blocksize.png  used on input line 183.
-(pdftex.def)             Requested size: 152.10931pt x 120.15047pt.
-<figures/gpu_stability_blocksize.png, id=129, 1438.173pt x 1136.0844pt>
-File: figures/gpu_stability_blocksize.png Graphic file (type png)
-<use figures/gpu_stability_blocksize.png>
-Package pdftex.def Info: figures/gpu_stability_blocksize.png  used on input line 183.
-(pdftex.def)             Requested size: 152.10931pt x 120.15047pt.
+<figures/block-size-3d.png, id=128, 2124.0153pt x 906.9885pt>
+File: figures/block-size-3d.png Graphic file (type png)
+<use figures/block-size-3d.png>
+Package pdftex.def Info: figures/block-size-3d.png  used on input line 163.
+(pdftex.def)             Requested size: 236.6145pt x 101.02843pt.
+<figures/block_size_hist.png, id=129, 859.2903pt x 426.393pt>
+File: figures/block_size_hist.png Graphic file (type png)
+<use figures/block_size_hist.png>
+Package pdftex.def Info: figures/block_size_hist.png  used on input line 163.
+(pdftex.def)             Requested size: 236.6145pt x 117.41133pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 183.
+Package pdftex.def Info: unipd_logo.png  used on input line 163.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
+
+Overfull \vbox (3.61148pt too high) detected at line 163
+ []
+
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
  [][][][]  
@@ -1092,23 +1096,24 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [9
 
- <./figures/gpu_perf_blocksize.png> <./figures/gpu_stability_blocksize.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 214--214
+ <./figures/block-size-3d.png> <./figures/block_size_hist.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 189--189
  [][][][]  
  []
 
-<figures/gpu_heatmap_blocksize.png, id=139, 1392.6429pt x 570.2103pt>
-File: figures/gpu_heatmap_blocksize.png Graphic file (type png)
-<use figures/gpu_heatmap_blocksize.png>
-Package pdftex.def Info: figures/gpu_heatmap_blocksize.png  used on input line 214.
-(pdftex.def)             Requested size: 184.3758pt x 75.48724pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 214.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+<figures/gpu_perf_blocksize.png, id=139, 1437.4503pt x 1136.0844pt>
+File: figures/gpu_perf_blocksize.png Graphic file (type png)
+<use figures/gpu_perf_blocksize.png>
+Package pdftex.def Info: figures/gpu_perf_blocksize.png  used on input line 189.
+(pdftex.def)             Requested size: 152.10931pt x 120.21982pt.
+<figures/gpu_stability_blocksize.png, id=140, 1438.173pt x 1136.0844pt>
+File: figures/gpu_stability_blocksize.png Graphic file (type png)
+<use figures/gpu_stability_blocksize.png>
+Package pdftex.def Info: figures/gpu_stability_blocksize.png  used on input line 189.
+(pdftex.def)             Requested size: 152.10931pt x 120.15047pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 214.
+Package pdftex.def Info: unipd_logo.png  used on input line 189.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1117,20 +1122,28 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [10
 
- <./figures/gpu_heatmap_blocksize.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 219--219
+ <./figures/gpu_perf_blocksize.png> <./figures/gpu_stability_blocksize.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 220--220
  [][][][]  
  []
 
-<figures/basic_GPU_CPU_perf.png, id=151, 1727.253pt x 1136.0844pt>
-File: figures/basic_GPU_CPU_perf.png Graphic file (type png)
-<use figures/basic_GPU_CPU_perf.png>
-Package pdftex.def Info: figures/basic_GPU_CPU_perf.png  used on input line 219.
-(pdftex.def)             Requested size: 304.21866pt x 200.08322pt.
+<figures/gpu_speedup_blocksize.png, id=150, 1437.4503pt x 1136.0844pt>
+File: figures/gpu_speedup_blocksize.png Graphic file (type png)
+<use figures/gpu_speedup_blocksize.png>
+Package pdftex.def Info: figures/gpu_speedup_blocksize.png  used on input line 220.
+(pdftex.def)             Requested size: 175.15643pt x 138.4218pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 220.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 219.
+Package pdftex.def Info: unipd_logo.png  used on input line 220.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
+
+Overfull \vbox (14.86998pt too high) detected at line 220
+ []
+
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
  [][][][]  
@@ -1138,19 +1151,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [11
 
- <./figures/basic_GPU_CPU_perf.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 224--224
+ <./figures/gpu_speedup_blocksize.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 225--225
  [][][][]  
  []
 
-<figures/basic_GPU_CPU_AVX.png, id=160, 1437.4503pt x 1136.0844pt>
-File: figures/basic_GPU_CPU_AVX.png Graphic file (type png)
-<use figures/basic_GPU_CPU_AVX.png>
-Package pdftex.def Info: figures/basic_GPU_CPU_AVX.png  used on input line 224.
-(pdftex.def)             Requested size: 261.19826pt x 206.42792pt.
+<figures/basic_GPU_CPU_perf.png, id=162, 1727.253pt x 1136.0844pt>
+File: figures/basic_GPU_CPU_perf.png Graphic file (type png)
+<use figures/basic_GPU_CPU_perf.png>
+Package pdftex.def Info: figures/basic_GPU_CPU_perf.png  used on input line 225.
+(pdftex.def)             Requested size: 304.21866pt x 200.08322pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 224.
+Package pdftex.def Info: unipd_logo.png  used on input line 225.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1159,19 +1172,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [12
 
- <./figures/basic_GPU_CPU_AVX.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 229--229
+ <./figures/basic_GPU_CPU_perf.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 230--230
  [][][][]  
  []
 
-<figures/basic_GPU_CPU_speedup.png, id=169, 1727.253pt x 1136.0844pt>
-File: figures/basic_GPU_CPU_speedup.png Graphic file (type png)
-<use figures/basic_GPU_CPU_speedup.png>
-Package pdftex.def Info: figures/basic_GPU_CPU_speedup.png  used on input line 229.
-(pdftex.def)             Requested size: 304.21866pt x 200.08322pt.
+<figures/basic_GPU_CPU_AVX.png, id=171, 1437.4503pt x 1136.0844pt>
+File: figures/basic_GPU_CPU_AVX.png Graphic file (type png)
+<use figures/basic_GPU_CPU_AVX.png>
+Package pdftex.def Info: figures/basic_GPU_CPU_AVX.png  used on input line 230.
+(pdftex.def)             Requested size: 261.19826pt x 206.42792pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 229.
+Package pdftex.def Info: unipd_logo.png  used on input line 230.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1180,19 +1193,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [13
 
- <./figures/basic_GPU_CPU_speedup.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 234--234
+ <./figures/basic_GPU_CPU_AVX.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 235--235
  [][][][]  
  []
 
-<figures/CPU_methods_heatmap.png, id=179, 1437.4503pt x 1136.0844pt>
-File: figures/CPU_methods_heatmap.png Graphic file (type png)
-<use figures/CPU_methods_heatmap.png>
-Package pdftex.def Info: figures/CPU_methods_heatmap.png  used on input line 234.
-(pdftex.def)             Requested size: 261.19826pt x 206.42792pt.
+<figures/basic_GPU_CPU_speedup.png, id=181, 1727.253pt x 1136.0844pt>
+File: figures/basic_GPU_CPU_speedup.png Graphic file (type png)
+<use figures/basic_GPU_CPU_speedup.png>
+Package pdftex.def Info: figures/basic_GPU_CPU_speedup.png  used on input line 235.
+(pdftex.def)             Requested size: 304.21866pt x 200.08322pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 234.
+Package pdftex.def Info: unipd_logo.png  used on input line 235.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1201,19 +1214,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [14
 
- <./figures/CPU_methods_heatmap.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 239--239
+ <./figures/basic_GPU_CPU_speedup.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 240--240
  [][][][]  
  []
 
-<figures/CPU_methods_hist.png, id=188, 1727.253pt x 1136.8071pt>
-File: figures/CPU_methods_hist.png Graphic file (type png)
-<use figures/CPU_methods_hist.png>
-Package pdftex.def Info: figures/CPU_methods_hist.png  used on input line 239.
-(pdftex.def)             Requested size: 304.21866pt x 200.2105pt.
+<figures/CPU_methods_heatmap.png, id=190, 1437.4503pt x 1136.0844pt>
+File: figures/CPU_methods_heatmap.png Graphic file (type png)
+<use figures/CPU_methods_heatmap.png>
+Package pdftex.def Info: figures/CPU_methods_heatmap.png  used on input line 240.
+(pdftex.def)             Requested size: 261.19826pt x 206.42792pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 239.
+Package pdftex.def Info: unipd_logo.png  used on input line 240.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1222,19 +1235,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [15
 
- <./figures/CPU_methods_hist.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 244--244
+ <./figures/CPU_methods_heatmap.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 245--245
  [][][][]  
  []
 
-<figures/BH_GPU_perf.png, id=197, 1438.173pt x 1136.0844pt>
-File: figures/BH_GPU_perf.png Graphic file (type png)
-<use figures/BH_GPU_perf.png>
-Package pdftex.def Info: figures/BH_GPU_perf.png  used on input line 244.
-(pdftex.def)             Requested size: 261.19826pt x 206.3239pt.
+<figures/CPU_methods_hist.png, id=199, 1727.253pt x 1136.8071pt>
+File: figures/CPU_methods_hist.png Graphic file (type png)
+<use figures/CPU_methods_hist.png>
+Package pdftex.def Info: figures/CPU_methods_hist.png  used on input line 245.
+(pdftex.def)             Requested size: 304.21866pt x 200.2105pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 244.
+Package pdftex.def Info: unipd_logo.png  used on input line 245.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1243,14 +1256,19 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [16
 
- <./figures/BH_GPU_perf.png>]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 276--276
+ <./figures/CPU_methods_hist.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 250--250
  [][][][]  
  []
 
+<figures/BH_GPU_perf.png, id=209, 1438.173pt x 1136.8071pt>
+File: figures/BH_GPU_perf.png Graphic file (type png)
+<use figures/BH_GPU_perf.png>
+Package pdftex.def Info: figures/BH_GPU_perf.png  used on input line 250.
+(pdftex.def)             Requested size: 261.19826pt x 206.45515pt.
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 276.
+Package pdftex.def Info: unipd_logo.png  used on input line 250.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1259,14 +1277,14 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [17
 
-]
-Overfull \hbox (20.22484pt too wide) in paragraph at lines 286--286
+ <./figures/BH_GPU_perf.png>]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 282--282
  [][][][]  
  []
 
 File: unipd_logo.png Graphic file (type png)
 <use unipd_logo.png>
-Package pdftex.def Info: unipd_logo.png  used on input line 286.
+Package pdftex.def Info: unipd_logo.png  used on input line 282.
 (pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
 
 Overfull \hbox (20.22484pt too wide) has occurred while \output is active
@@ -1275,7 +1293,23 @@ Overfull \hbox (20.22484pt too wide) has occurred while \output is active
 
 [18
 
-] [19
+]
+Overfull \hbox (20.22484pt too wide) in paragraph at lines 296--296
+ [][][][]  
+ []
+
+File: unipd_logo.png Graphic file (type png)
+<use unipd_logo.png>
+Package pdftex.def Info: unipd_logo.png  used on input line 296.
+(pdftex.def)             Requested size: 74.85956pt x 33.4754pt.
+
+Overfull \hbox (20.22484pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
+
+] [20
 
 ]
 \tf@nav=\write6
@@ -1296,18 +1330,18 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 25944699652C994A4E72C3B5E7148ECB;1044.
  ) 
 Here is how much of TeX's memory you used:
- 30330 strings out of 474116
- 644144 string characters out of 5743688
+ 30348 strings out of 474116
+ 644639 string characters out of 5743688
  1939187 words of memory out of 5000000
- 52048 multiletter control sequences out of 15000+600000
+ 52064 multiletter control sequences out of 15000+600000
  655799 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,509b,999s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on presentation.pdf (19 pages, 2427150 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on presentation.pdf (20 pages, 2945118 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

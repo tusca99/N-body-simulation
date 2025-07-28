@@ -156,6 +156,12 @@
     }
 \end{frame}
 
+\begin{frame}{Block-Size Comparison Benchmark}
+    \centering
+    \includegraphics[width=0.77\linewidth]{figures/block-size-3d.png}
+    \includegraphics[width=0.77\linewidth]{figures/block_size_hist.png}
+\end{frame}
+
 \begin{frame}{Block Size Auto-Tuning}
     % Top: Text description
     \begin{itemize}
@@ -194,7 +200,7 @@
             The grid size formula is exact for 1D N-body kernels.
             }
             \vspace{0.5cm}
-            \includegraphics[width=\linewidth]{figures/gpu_heatmap_blocksize.png}
+            \includegraphics[width=0.95\linewidth]{figures/gpu_speedup_blocksize.png}
         \column{0.4\textwidth}
             \scriptsize
             \small\begin{block}{Heuristic Block Size Selection (pseudocode)}
@@ -266,7 +272,7 @@
 \section{Limitations and Lessons Learned}
 \begin{frame}{Limitations and Lessons Learned}
     \begin{itemize}
-        \item Bottlenecks in compute for very large N
+        \item Bottlenecks in compute for very large N (different methods, ResNets?, ...)
         \item Tradeoffs between accuracy and speed (double in GPU, same memory pattern in CPU).
         \item Importance of a clear vision at the start of the project
         \item Need for a robust testing framework
@@ -280,7 +286,11 @@
     \begin{itemize}
         \item We skipped many small details (tiling, async memory...) in this presentation, so if you want to know more, please check the \href{https://github.com/tusca99/N-body-simulation.git}{GitHub repository}
         \item High-performance, modular N-body simulation achieved
-        \item GPU acceleration enables large-scale experiments
+        \item GPU acceleration enables large-scale experiments of:
+            \begin{itemize}
+            \item $\sim 10^{3--4}$ particles in real time (> 30 steps/s or FPS)
+            \item $\sim 10^{5--6}$ particles not in real time
+            \end{itemize}
         \item Framework ready for extension and research
     \end{itemize}
 \end{frame}
