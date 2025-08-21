@@ -78,7 +78,14 @@ You no not need presentation folder to run the project. In fact there is a lot o
 2. **Manual build (alternative):**
   i expect you know how to read a cmake list if you are reading this, then good luck :)
 
+3. **Without build (not recommended):**
+   you can try running the executable provided as is, keep in mind you need libcudart.so, libglew.so, libglfw.so
+   This is a method you can try just to see if it runs without installing the whole cuda-toolkit.
+   For example in Debian13: ``` sudo apt install libcudart12 glew-utils libglfw3``
+
 ---
+
+
 
 ## Usage Instructions
 
