@@ -60,7 +60,7 @@ VisualizationKernels.cu
    │      └── ParticleRenderer.cpp
    │             ├── ShaderManager.cpp
    │             └── CameraController.cpp
-   └── cuda/OpenGL_interop
+   └── OpenGL_interop
 ```
 
 Or as a diagram:
@@ -71,7 +71,7 @@ graph TD
     VisualizationUtils.cpp --> ParticleRenderer.cpp
     ParticleRenderer.cpp --> ShaderManager.cpp
     ParticleRenderer.cpp --> CameraController.cpp
-    ParticleRenderer.cpp --> cuda/OpenGL_interop
+    ParticleRenderer.cpp --> OpenGL_interop
 ```
 
 ### Architecture Notes & Suggestions
