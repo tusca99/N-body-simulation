@@ -63,7 +63,7 @@ namespace {
 
 }
 
-// Main force selection function - similar to your CUDA implementation's pattern
+// Main force selection function - similar to CUDA implementation's pattern
 Accelerations calculateForces(const Particles &p, ForceMethod method, double theta) {
     switch (method) {
         case ForceMethod::PAIRWISE:
