@@ -116,7 +116,7 @@
         \item Structure of Arrays (SoA) for efficient access and fully coalesced memory with double4
         \item Pinned memory and CUDA streams
         \item AVX2 vectorization and OpenMP threading
-        \item Low-ish memory footprint: \SI{1.1}{GiB} for 1B particles
+        \item Low-ish memory footprint: \SI{1.9}{GiB} for 10M particles
         \item In CSV output mode, System is copied only at the start $\rightarrow$ multiple cuda streams for memory and compute management.
         \item In visualization mode, System is copied every frame to a dynamic buffer, which is then used for rendering
                 $\rightarrow$ worst case scenario $\Rightarrow$ OpenGL-cuda interop and separate rendering stream $\rightarrow$ less bottleneck.
