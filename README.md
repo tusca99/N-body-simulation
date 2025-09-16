@@ -12,7 +12,7 @@ You no not need presentation folder to run the project. In fact there is a lot o
   - GPU acceleration via CUDA for millions of particles.
   - Optimized CPU execution with OpenMP parallelism.
   - Efficient memory management (pinned memory, device-host transfers).
-  - Very low memory usage (~310MiB for 1M particle simulation, ~1.1GiB for 1B particles)
+  - Very low memory usage (~310MiB for 1M particle simulation, ~1.9GiB for 10M particles)
 
 - **Flexible Physics Models:**  
   - Multiple force calculation methods: Pairwise, Adaptive Mutual Softening, Barnes-Hut.
@@ -145,7 +145,7 @@ You no not need presentation folder to run the project. In fact there is a lot o
 - **Platform Dependency:** Primarily tested on Linux; Windows/Mac support may require additional setup.
 - **GPU Requirement:** Full performance and visualization require a CUDA-capable NVIDIA GPU.
 - **Documentation:** While code is modular, some advanced features may require further documentation for new users.
-- **Still slow with respect to-state-of-the-art libraries** While memory usage is minimal we are still limited to ~25k particles in real-time (~30fps with modern CPUs) so everything is slower than my initial goal (billion particles in real time). I believe that finishing up Barnes-Hut in CUDA with morton sorting and trasversal tree could achieve that, but I did not manage to do it. Also the visualization feature was my first ever try so it's very slow compared to the raw compute, in some cases even 10 times slower with modern hardware. I believe there is still a lot of vectorization and optimization to do in this department.
+- **Still slow with respect to-state-of-the-art libraries** While memory usage is minimal we are still limited to ~25k particles in real-time (~30fps with modern CPUs) so everything is slower than my initial goal (million particles in real time). I believe that finishing up Barnes-Hut in CUDA with morton sorting and trasversal tree could achieve that, but I did not manage to do it. Also the visualization feature was my first ever try so it's very slow compared to the raw compute, in some cases even 10 times slower with modern hardware. I believe there is still a lot of vectorization and optimization to do in this department.
 - **Not a real documentation:** Please note that all the other READMEs are all generated and while they were inspected by me they are readable at best.
 - **Code fragmentation:** Finally the code is not organised as much as I'd hoped it would be, you have to blame my lack of vision for this project as well as my inexperience in project design. It's my first time doing a project of this size, without real research on best practices in anything other than pure algorithm optimization. Also some code, particularly the last benchmark blob in the main, is generated, so it's unrefined in contrast to the rest (here i was at the last straws of patience after a month going back and forth with BH-Kernels).
 
