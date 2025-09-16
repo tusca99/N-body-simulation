@@ -12,7 +12,7 @@ You no not need presentation folder to run the project. In fact there is a lot o
   - GPU acceleration via CUDA for millions of particles.
   - Optimized CPU execution with OpenMP parallelism.
   - Efficient memory management (pinned memory, device-host transfers).
-  - Very low memory usage (~310MiB for 1M particle simulation, ~1.1GiB for 1B particles)
+  - Very low memory usage (~310MiB for 1M particle simulation, ~1.9GiB for 10M particles)
 
 - **Flexible Physics Models:**  
   - Multiple force calculation methods: Pairwise, Adaptive Mutual Softening, Barnes-Hut.
