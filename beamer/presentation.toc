@@ -1,0 +1,8 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction and Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Project Evolution}{4}{0}{2}
+\beamer@sectionintoc {3}{Memory Management and Optimizations}{7}{0}{3}
+\beamer@sectionintoc {4}{Force and Integration Methods}{8}{0}{4}
+\beamer@sectionintoc {5}{Performance Comparison with Existing Codes}{21}{0}{5}
+\beamer@sectionintoc {6}{Limitations and Lessons Learned}{23}{0}{6}
+\beamer@sectionintoc {7}{Conclusions}{25}{0}{7}
